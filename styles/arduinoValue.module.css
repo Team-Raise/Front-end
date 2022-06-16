@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+.title {
+  margin-top: 3rem;
+  font-size: 4vw;
+  font-family: 'Comfortaa', cursive;
+}
+
+.teamName {
+  font-family: 'Gentium Plus', serif;
+  font-size: 2.5vw;
+}
+
+.updatedTime {
+  margin-top: 4vh;
+  font-size: 1.4vw;
+}
+
+.box {
+  float: left;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  width: 12vw;
+  height: auto;
+}
+
+.boxContainer {
+  margin-top: 12vh;
+  margin-left: auto;
+  margin-right: auto;
+  width: 46.5vw;
+}
+
+.rightBox {
+  margin-left: 5vw;
+}
+
+.boxTitle {
+  margin-top: 1.5vh;
+  font-size: 2.2vw;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+
+.humi {
+  font-weight: bold;
+  color: #130ea1;
+}
+
+.temp {
+  font-weight: bold;
+  color: #d3122c;
+}
+
+.feelTemp {
+  font-weight: bold;
+  color: #1aab6e;
+}
+
+.supplement {
+  margin-top: 1vh;
+  font-size: 1.2vw;
+  margin-bottom: 2vh;
+}
