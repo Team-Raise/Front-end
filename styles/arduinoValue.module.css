@@ -2,6 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
+.titleBox {
+  margin-left: 19vw;
+}
+
 .title {
   margin-top: 3rem;
   font-size: 4vw;
@@ -14,15 +18,19 @@
 }
 
 .updatedTime {
+  margin-right: 5vw;
+  float: right;
   margin-top: 4vh;
-  font-size: 1.4vw;
+  font-size: 1.3vw;
 }
 
 .box {
+  background-color: #fff;
   float: left;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   width: 12vw;
   height: auto;
+  border-radius: 1rem;
 }
 
 .boxContainer {
@@ -44,7 +52,7 @@
 
 .humi {
   font-weight: bold;
-  color: #130ea1;
+  color: #0e0a80;
 }
 
 .temp {

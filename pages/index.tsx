@@ -7,7 +7,7 @@ import styles from '../styles/arduinoValue.module.css'
 const cs = classNames.bind(styles)
 
 const Home = () => {
-  const {data, error} = useSWR('/api/DB', fetcher)
+  const { data, error } = useSWR('/api/DB', fetcher)
 
   if (error) {
     return (
@@ -19,15 +19,15 @@ const Home = () => {
     )
   } else {
     return (
-      <div>
-        <div>
-          <div className={cs('title')}>Smart Farm</div>
-          <div className={cs('teamName')}>Team. Raise</div>
-        </div>
+      <>
         {Object.values(data.values).map((log: any) => (
           <div key={1}>
+            <div className={cs('updatedTime')}><br/>{log.date}</div>
 
-            <div className={cs('updatedTime')}>마지막으로 업데이트 된 시간<br/>{log.date}</div>
+            <div className={cs('titleBox')}>
+              <div className={cs('title')}>Smart Farm</div>
+              <div className={cs('teamName')}>Team. Raise</div>
+            </div>
 
             <div className={cs('boxContainer')}>
 
@@ -49,7 +49,7 @@ const Home = () => {
             </div>
           </div>
         ))}
-      </div>
+      </>
     )
   }
 }
