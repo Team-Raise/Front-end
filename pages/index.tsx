@@ -2,12 +2,15 @@ import React from 'react'
 import useSWR from 'swr'
 import fetcher from '../utils/fetcher'
 import classNames from 'classnames/bind'
-import styles from '../styles/arduinoValue.module.css'
+import styles from '../styles/arduinoValue.module.scss'
+import { useRouter } from "next/router";
 
 const cs = classNames.bind(styles)
 
 const Home = () => {
-  const { data, error } = useSWR('/api/DB', fetcher)
+  const router = useRouter()
+
+  const {data, error} = useSWR('/api/DB', fetcher)
 
   if (error) {
     return (
@@ -20,6 +23,7 @@ const Home = () => {
   } else {
     return (
       <>
+
         {Object.values(data.values).map((log: any) => (
           <div key={1}>
             <div className={cs('updatedTime')}><br/>{log.date}</div>
@@ -49,6 +53,11 @@ const Home = () => {
             </div>
           </div>
         ))}
+        <div className={cs('plantBookContainer')} onClick={() => router.push('/GrowPlant')}>
+          <img src={'https://cdn.discordapp.com/attachments/935776183688245341/989083867975647254/pngegg7.png'}
+               className={cs('plantBook')}/>
+          <div>식물도감</div>
+        </div>
       </>
     )
   }
