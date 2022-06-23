@@ -9,6 +9,7 @@ import Pepper from "./components/Pepper";
 import Eggplant from "./components/Eggplant";
 import Zucchini from "./components/Zucchini";
 import Sesame from "./components/Sesame";
+import Nav from "./components/Nav";
 
 const cs = classNames.bind(style)
 
@@ -20,16 +21,17 @@ const GrowPlant = () => {
 
   return (
     <>
+      <Nav/>
       <h1>식물도감 페이지</h1>
       <div className={cs('buttonContainer')}>
-        <button onClick={() => setSelectedOption('spinach')}>시금치</button>
-        <button onClick={() => setSelectedOption('lettuce')}>상추</button>
-        <button onClick={() => setSelectedOption('sesame')}>깻잎</button>
-        <button onClick={() => setSelectedOption('cherryTomato')}>방울토마토</button>
-        <button onClick={() => setSelectedOption('cabbage')}>배추</button>
-        <button onClick={() => setSelectedOption('pepper')}>고추</button>
-        <button onClick={() => setSelectedOption('eggplant')}>가지</button>
-        <button onClick={() => setSelectedOption('zucchini')}>애호박</button>
+        <button onClick={() => setSelectedOption('spinach')} className={cs('button')}>시금치</button>
+        <button onClick={() => setSelectedOption('lettuce')} className={cs('button')}>상추</button>
+        <button onClick={() => setSelectedOption('sesame')} className={cs('button')}>깻잎</button>
+        <button onClick={() => setSelectedOption('cherryTomato')} className={cs('button')}>방울토마토</button>
+        <button onClick={() => setSelectedOption('cabbage')} className={cs('button')}>배추</button>
+        <button onClick={() => setSelectedOption('pepper')} className={cs('button')}>고추</button>
+        <button onClick={() => setSelectedOption('eggplant')} className={cs('button')}>가지</button>
+        <button onClick={() => setSelectedOption('zucchini')} className={cs('button')}>애호박</button>
       </div>
 
       {

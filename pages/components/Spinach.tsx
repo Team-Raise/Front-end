@@ -1,8 +1,18 @@
 import React from "react";
+import Image from "next/image";
 
 const Spinach = () => {
   return (
     <div>
+      <div>
+        <div>시금치</div>
+        <Image
+          src={'/images/spinach.png'}
+          alt="Picture of the author"
+          width={300}
+          height={300}
+        />
+        </div>
       <div>
         적정온도: 15~20도<br/>
         물 주는 주기: 보통(건조에 극히 약함)<br/>

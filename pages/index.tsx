@@ -4,6 +4,7 @@ import fetcher from '../utils/fetcher'
 import classNames from 'classnames/bind'
 import styles from '../styles/arduinoValue.module.scss'
 import { useRouter } from "next/router";
+import Nav from './components/Nav'
 
 const cs = classNames.bind(styles)
 
@@ -23,7 +24,7 @@ const Home = () => {
   } else {
     return (
       <>
-
+        <Nav/>
         {Object.values(data.values).map((log: any) => (
           <div key={1}>
             <div className={cs('updatedTime')}><br/>{log.date}</div>
@@ -53,11 +54,6 @@ const Home = () => {
             </div>
           </div>
         ))}
-        <div className={cs('plantBookContainer')} onClick={() => router.push('/GrowPlant')}>
-          <img src={'https://cdn.discordapp.com/attachments/935776183688245341/989083867975647254/pngegg7.png'}
-               className={cs('plantBook')}/>
-          <div>식물도감</div>
-        </div>
       </>
     )
   }

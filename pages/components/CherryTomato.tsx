@@ -1,8 +1,19 @@
 import React from "react";
+import Image from "next/image";
 
 const CherryTomato = () => {
   return (
     <div>
+      <div>
+        <div>방울토마토</div>
+        <Image
+          src={'/images/cherryTomato.png'}
+          alt="Picture of the author"
+          width={300}
+          height={200}
+        />
+      </div>
+
       <div>
       적정온도: 25~30도<br/>
       물 주는 주기: 오전에 흠뻑 물주기<br/>
