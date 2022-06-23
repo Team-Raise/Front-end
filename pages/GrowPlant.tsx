@@ -36,7 +36,7 @@ const GrowPlant = () => {
 
       {
         selectedOption === '' && (
-          <div className={cs('bottom')}>재배 할 식물을 선택하여주세요.</div>
+          <div className={cs('beforeChoice')}>재배 할 식물을 선택하여주세요.</div>
         )
       }
 

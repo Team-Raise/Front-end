@@ -3,8 +3,11 @@ import useSWR from 'swr'
 import fetcher from '../utils/fetcher'
 import classNames from 'classnames/bind'
 import styles from '../styles/arduinoValue.module.scss'
-import { useRouter } from "next/router";
+import {useRouter} from "next/router";
 import Nav from './components/Nav'
+import Loading from "./components/Loading";
+import Image from "next/image";
+import FancyModal from "./components/FancyModal";
 
 const cs = classNames.bind(styles)
 
@@ -18,21 +21,21 @@ const Home = () => {
       <div>error</div>
     )
   } else if (!data) {
-    return (
-      <div>loading...</div>
-    )
+    return <Loading/>
   } else {
     return (
       <>
         <Nav/>
+
+        <Image
+          src={'/images/logo.png'}
+          width={315}
+          height={190}
+          alt={'Logo'}
+        />
+
         {Object.values(data.values).map((log: any) => (
           <div key={1}>
-            <div className={cs('updatedTime')}><br/>{log.date}</div>
-
-            <div className={cs('titleBox')}>
-              <div className={cs('title')}>Smart Farm</div>
-              <div className={cs('teamName')}>Team. Raise</div>
-            </div>
 
             <div className={cs('boxContainer')}>
 
@@ -50,10 +53,21 @@ const Home = () => {
                 <div className={cs('boxTitle', 'feelTemp')}>체감온도</div>
                 <div className={cs('supplement')}>{log.hic}℃</div>
               </div>
-
+            </div>
+            <br/>
+            <div className={cs('updatedTime')}>최신 업데이트
+              <div style={{color: '#f00'}}>{log.date}</div>
             </div>
           </div>
+
         ))}
+
+        <FancyModal/>
+
+        <div className="footer">
+          <a href={'https://github.com/jinhyo-dev/Capstone-Project'} target={"blank"} className='footerFont'>© 2022 GBSW
+            Team. Raise</a>
+        </div>
       </>
     )
   }

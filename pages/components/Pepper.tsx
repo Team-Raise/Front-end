@@ -3,9 +3,10 @@ import Image from "next/image";
 
 const Pepper = () => {
   return (
-    <div>
+    <div className='descriptionPage'>
+
       <div>
-        <div>고추</div>
+        <div className='plantTitle'>고추</div>
         <Image
           src={'/images/pepper.png'}
           alt="Picture of the author"
@@ -13,11 +14,13 @@ const Pepper = () => {
           height={300}
         />
       </div>
-      <div>
+
+      <div className='description'>
         적정온도: 낮 온도 25℃ 내외, 밤 온도 20℃ 내외<br/>
         물 주는 주기: 4~5일<br/>
         수확시기: 7월 말 ~ 10월 초
       </div>
+
     </div>
   )
 }

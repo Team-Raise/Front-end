@@ -1,3 +1,53 @@
+@font-face {
+  font-family: 'CBNUJIKJI';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202@1.0/CBNUJIKJI.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GangwonEdu_OTFBoldA';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   text-align: center;
+}
+
+.descriptionPage {
+  margin-top: 6vh;
+}
+
+.plantTitle {
+  font-family: 'CBNUJIKJI';
+  font-size: 3vw;
+}
+
+.description {
+  font-family: 'GangwonEdu_OTFBoldA';
+  font-size: 20px;
+}
+
+.footer {
+  height: 45px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #ccc;
+  color: white;
+  text-align: center;
+}
+
+.footerFont {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin-bottom: -10px;
+  &:hover {
+    cursor: pointer;
+    color: #000;
+  }
 }
