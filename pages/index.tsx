@@ -41,18 +41,24 @@ const Home = () => {
 
               <div className={cs('humiBox', 'box')}>
                 <div className={cs('boxTitle', 'humi')}>습도</div>
-                <div className={cs('supplement')}>{log.humi}%</div>
+                <div className={cs('supplement')}>{log.humidity}%</div>
               </div>
 
               <div className={cs('humiBox', 'box', 'rightBox')}>
                 <div className={cs('boxTitle', 'temp')}>온도</div>
-                <div className={cs('supplement')}>{log.temp}℃</div>
+                <div className={cs('supplement')}>{log.temperature}℃</div>
               </div>
 
               <div className={cs('humiBox', 'box', 'rightBox')}>
-                <div className={cs('boxTitle', 'feelTemp')}>체감온도</div>
-                <div className={cs('supplement')}>{log.hic}℃</div>
+                <div className={cs('boxTitle', 'feelTemp')}>수위</div>
+                <div className={cs('supplement')}>{log.water_level}</div>
               </div>
+
+              <div className={cs('humiBox', 'box', 'rightBox')}>
+                <div className={cs('boxTitle', 'ph')}>pH</div>
+                <div className={cs('supplement')}>{log.ph}</div>
+              </div>
+
             </div>
             <br/>
             <div className={cs('updatedTime')}>최신 업데이트

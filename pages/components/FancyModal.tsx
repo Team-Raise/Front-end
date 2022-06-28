@@ -32,16 +32,18 @@ function MydModalWithGrid(props: any) {
               <tr className={cs('table_tr')}>
                 <th>습도</th>
                 <th>온도</th>
-                <th>체감<br/>온도</th>
+                <th>토양수위</th>
+                <th>pH</th>
                 <th className={cs('dateInput')}>입력받은 시각</th>
               </tr>
               </thead>
               <tbody>
               {Object.values(data.fetchData).map((log: any) => (
                 <tr key={1}>
-                  <td className={cs('humi')}>{log.humi}%</td>
-                  <td className={cs('temp')}>{log.temp}</td>
-                  <td className={cs('price')}>{log.hic}</td>
+                  <td className={cs('humi')}>{log.humidity}%</td>
+                  <td className={cs('temp')}>{log.temperature}</td>
+                  <td className={cs('waterLevel')}>{log.water_level}</td>
+                  <td className={cs('ph')}>{log.ph}</td>
                   <td className={cs('date')}>{log.date}</td>
                 </tr>
               ))}
