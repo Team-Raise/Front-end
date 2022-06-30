@@ -10,6 +10,7 @@ import Image from "next/image";
 import FancyModal from "./components/FancyModal";
 import {AiOutlineDelete} from "react-icons/ai"
 import axios from 'axios';
+import {IoReloadOutline} from "react-icons/io5"
 
 const cs = classNames.bind(styles)
 
@@ -18,10 +19,15 @@ const Home = () => {
 
   const {data, error} = useSWR('/api/DB', fetcher)
 
-  const onRemove = async () => {
+  const truncate = async () => {
+    await axios.get('/api/DeleteData')
+  }
+
+  const onRemove = () => {
     if (window.confirm("정말로 모든 데이터를 초기화시키겠습니까?")) {
-      alert("삭제되었습니다.")
-      await axios.get('/api/DeleteData')
+      truncate()
+      alert('삭제되었습니다.')
+      location.reload()
     }
   };
 
@@ -95,6 +101,9 @@ const Home = () => {
 
           <FancyModal/>
           <br/>
+          <button className={cs('reloadButton')} onClick={() => location.reload()}>
+              <IoReloadOutline/> 새로 고침
+          </button>
           <button className={cs('deleteButton')} onClick={onRemove}>
             <AiOutlineDelete/> 데이터 초기화
           </button>
