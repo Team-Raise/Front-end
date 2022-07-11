@@ -27,7 +27,7 @@ function MydModalWithGrid(props: any) {
         </Modal.Header>
         <Modal.Body className="show-grid">
           <Container>
-            <table className={cs('mainTable')} style={{width: '100%', marginTop: '2rem', maxWidth: '70rem'}}>
+            <table className={cs('mainTable')} >
               <thead>
               <tr className={cs('table_tr')}>
                 <th>습도</th>

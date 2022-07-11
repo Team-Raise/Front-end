@@ -8,7 +8,7 @@
 
 .updatedTime {
   margin-top: 20vh;
-  font-size: 1vw;
+  font-size: 17px;
 }
 
 .box {
@@ -159,11 +159,9 @@
     background-color: #de467f;
   }
 
-
   &:focus {
     box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
   }
-
 
   &:active {
     background-color: #0064bd;

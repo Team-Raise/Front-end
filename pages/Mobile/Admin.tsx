@@ -1,20 +1,20 @@
 import React, {useState, useEffect, useRef} from "react"
 import useSWR from 'swr'
-import fetcher from '../utils/fetcher'
+import fetcher from '../../utils/fetcher'
 import classNames from 'classnames/bind'
-import styles from '../styles/arduinoValue.module.scss'
+import styles from '../../styles/MobileData.module.scss'
 import {useRouter} from "next/router";
-import Nav from './components/Nav'
-import Loading from "./components/Loading";
+import MobileNav from '../components/MobileNav'
+import Loading from "../components/Loading"
 import Image from "next/image";
-import FancyModal from "./components/FancyModal";
+import FancyModal from "../components/FancyModal";
 import {AiOutlineDelete} from "react-icons/ai"
 import axios from 'axios';
 import {IoReloadOutline} from "react-icons/io5"
 
 const cs = classNames.bind(styles)
 
-const Datas = () => {
+const Admin = () => {
   const router = useRouter()
 
   const {data, error} = useSWR('/api/DB', fetcher)
@@ -41,7 +41,7 @@ const Datas = () => {
     if (data.values.length === 0) {
       return (
         <>
-          <Nav/>
+          <MobileNav/>
 
           <Image
             src={'/images/logo.png'}
@@ -57,66 +57,55 @@ const Datas = () => {
     } else {
       return (
         <>
-          <Nav/>
+          <MobileNav/>
 
-          <Image
+          <img
             src={'/images/logo.png'}
-            width={315}
-            height={190}
             alt={'Logo'}
+            className={cs('logo')}
           />
 
           {Object.values(data.values).map((log: any) => (
             <div key={1}>
 
-              <div className={cs('boxContainer')}>
 
-                <div className={cs('humiBox', 'box')}>
-                  <div className={cs('boxTitle', 'humi')}>습도</div>
-                  <div className={cs('supplement')}>{log.humidity}%</div>
-                </div>
-
-                <div className={cs('humiBox', 'box', 'rightBox')}>
-                  <div className={cs('boxTitle', 'temp')}>온도</div>
-                  <div className={cs('supplement')}>{log.temperature}℃</div>
-                </div>
-
-                <div className={cs('humiBox', 'box', 'rightBox')}>
-                  <div className={cs('boxTitle', 'feelTemp')}>수위</div>
-                  <div className={cs('supplement')}>{log.water_level}</div>
-                </div>
-
-                <div className={cs('humiBox', 'box', 'rightBox')}>
-                  <div className={cs('boxTitle', 'ph')}>pH</div>
-                  <div className={cs('supplement')}>{log.ph}</div>
-                </div>
-
+              <div className={cs('box')} style={{marginTop: '2rem'}}>
+                <div className={cs('supplement')}><label className={cs('humi')}>습도</label> - {log.humidity}%</div>
               </div>
-              <br/>
+
+              <div className={cs('box')}>
+                <div className={cs('supplement')}><label className={cs('temp')}>온도</label> - {log.temperature}℃</div>
+              </div>
+
+              <div className={cs('box')}>
+                <div className={cs('supplement')}><label className={cs('waterLevel')}>수위</label> - {log.water_level}
+                </div>
+              </div>
+
+              <div className={cs('box')}>
+                <div className={cs('supplement')}><label className={cs('ph')}>pH</label> - {log.ph}</div>
+              </div>
+
               <div className={cs('updatedTime')}>최신 업데이트
                 <div style={{color: '#f00'}}>{log.date}</div>
               </div>
+
             </div>
           ))}
 
           <FancyModal/>
           <br/>
           <button className={cs('reloadButton')} onClick={() => location.reload()}>
-              <IoReloadOutline/> 새로 고침
+            <IoReloadOutline/> 새로 고침
           </button>
           <button className={cs('deleteButton')} onClick={onRemove}>
             <AiOutlineDelete/> 데이터 초기화
           </button>
 
-          <div className="footer">
-            <a href={'https://github.com/jinhyo-dev/Capstone-Project'} target={"blank"} className='footerFont'>© 2022
-              GBSW
-              Team. Raise</a>
-          </div>
         </>
       )
     }
   }
 }
 
-export default Datas
+export default Admin

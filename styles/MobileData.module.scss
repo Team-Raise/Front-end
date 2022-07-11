@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Plus:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+.titleBox {
+  margin-left: 19vw;
+}
+
+.updatedTime {
+  margin-top: 40px;
+  font-size: 17px;
+}
+
+.logo {
+  width: 180px;
+}
+
+.box {
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  height: 33px;
+  width: 60vw;
+  max-width: 500px;
+}
+
+.humi {
+  font-weight: bold;
+  color: #0e0a80;
+}
+
+.temp {
+  font-weight: bold;
+  color: #d3122c;
+}
+
+.waterLevel {
+  font-weight: bold;
+  color: #42d6db;
+}
+
+.supplement {
+  margin-top: 1px;
+  font-size: 20px;
+}
+
+.plantBookContainer {
+  margin-top: 40vh;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.plantBook {
+  filter: grayscale(1.1);
+  width: 10vw;
+}
+
+.plantBook:hover {
+  cursor: pointer;
+  filter: none;
+}
+
+.ph {
+  font-weight: bold;
+  color: #42db51;
+}
+
+.deleteButton {
+  margin-left: 1vw;
+  background-color: rgba(239, 39, 39, 0.98);
+  margin-right: auto;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: #de467f;
+  }
+
+
+  &:focus {
+    box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+  }
+
+
+  &:active {
+    background-color: #0064bd;
+    box-shadow: none;
+  }
+}
+
+.notExist {
+  font-size: 4.5vw;
+  text-align: center;
+  font-family: 'Noto Serif KR', serif;
+  margin-top: 17vh;
+}
+
+.reloadButton {
+  margin-left: 1vw;
+  margin-top: 10vh;
+  margin-bottom: 10rem;
+  background-color: rgb(0, 174, 246);
+  margin-right: auto;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-shadow: rgba(255, 255, 255, .4) 0 1px 0 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", "Liberation Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.15385;
+  outline: none;
+  padding: 8px .8em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: #de467f;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 4px rgba(0, 149, 255, .15);
+  }
+
+  &:active {
+    background-color: #0064bd;
+    box-shadow: none;
+  }
+}

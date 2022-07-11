@@ -1,15 +1,15 @@
 import React, {useState} from "react";
 import classNames from 'classnames/bind'
-import style from '../styles/growPlants.module.scss'
-import Spinach from "./components/Spinach";
-import Lettuce from "./components/Lettuce";
-import CherryTomato from './components/CherryTomato'
-import Cabbage from "./components/Cabbage";
-import Pepper from "./components/Pepper";
-import Eggplant from "./components/Eggplant";
-import Zucchini from "./components/Zucchini";
-import Sesame from "./components/Sesame";
-import Nav from "./components/Nav";
+import style from '../../styles/growPlants.module.scss'
+import Spinach from "../components/Spinach";
+import Lettuce from "../components/Lettuce";
+import CherryTomato from '../components/CherryTomato'
+import Cabbage from "../components/Cabbage";
+import Pepper from "../components/Pepper";
+import Eggplant from "../components/Eggplant";
+import Zucchini from "../components/Zucchini";
+import Sesame from "../components/Sesame";
+import DesktopNav from "../components/DesktopNav";
 
 const cs = classNames.bind(style)
 
@@ -21,7 +21,7 @@ const GrowPlant = () => {
 
   return (
     <>
-      <Nav/>
+      <DesktopNav/>
       <h1>식물도감 페이지</h1>
       <div className={cs('buttonContainer')}>
         <button onClick={() => setSelectedOption('spinach')} className={cs('button')}>시금치</button>
