@@ -41,7 +41,6 @@ function MydModalWithGrid(props: any) {
       </Modal.Header>
       <Modal.Body className="show-grid">
         <Container>
-
           <input onChange={(e:any) => setId(e.target.value)} className='inputId' placeholder={'ID'}/> <br/>
           <input type={"password"} onChange={(e:any) => setPassword(e.target.value)} className='inputPassword' placeholder={'Password'}/>
           <button onClick={login} className="loginBtn">로그인</button>
