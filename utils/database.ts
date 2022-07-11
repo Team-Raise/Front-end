@@ -10,7 +10,7 @@ export const createDBConnection = () => {
   const db = knex({
     client: 'mysql',
     connection: {
-      host: '158.247.211.247',
+      host: 'localhost',
       port: 3306,
       user: 'jinhyo',
       database: 'panel',

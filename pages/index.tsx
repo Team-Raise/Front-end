@@ -5,4 +5,4 @@ const Index = dynamic(() => import("./StateRendering"), {
   ssr: false,
 });
 
-export default Index
+export default Index;
