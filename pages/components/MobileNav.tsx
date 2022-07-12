@@ -11,7 +11,7 @@ export default function mobileNav() {
         <div className="collapse navbar-collapse" id="navbarCollapse">
           <ul className="navbar-nav me-auto mb-2 mb-md-0">
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href={'/Mobile/Guest'}>메인 페이지</a>
+              <a className="nav-link" aria-current="page" href={'/Mobile/Datas'}>메인 페이지</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" href="/Mobile/GrowPlant">식물 도감</a>

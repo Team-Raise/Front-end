@@ -11,13 +11,29 @@ import FancyModal from "../components/FancyModal";
 import {AiOutlineDelete} from "react-icons/ai"
 import axios from 'axios';
 import {IoReloadOutline} from "react-icons/io5"
+import { useCookies } from 'react-cookie';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const cs = classNames.bind(styles)
 
-const Admin = () => {
+const Datas = () => {
   const router = useRouter()
-  console.log(window.localStorage.getItem('isAdmin'))
+  const [cookies, setCookie] = useCookies(['isAdmin']);
+  const token = cookies.isAdmin
   const {data, error} = useSWR('/api/DB', fetcher)
+
+  if (cookies.isAdmin) {
+    toast.success('관리자님, 환영합니다!', {
+      position: "top-right",
+      autoClose: 500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      })
+  }
 
   const truncate = async () => {
     await axios.get('/api/DeleteData')
@@ -104,18 +120,23 @@ const Admin = () => {
           <button className={cs('reloadButton')} onClick={() => location.reload()}>
             <IoReloadOutline/> 새로 고침
           </button>
-          <button className={cs('deleteButton')} onClick={onRemove}>
-            <AiOutlineDelete/> 데이터 초기화
-          </button>
+
+          
+          { token && 
+            <button className={cs('deleteButton')} onClick={onRemove}>
+              <AiOutlineDelete/> 데이터 초기화
+            </button>
+          }
 
           <div className="footer">
             <a href={'https://github.com/jinhyo-dev/Capstone-Project'} target={"blank"} className='footerFont'>© 2022
               GBSW Team. Raise</a>
           </div>
+          <ToastContainer />
         </>
       )
     }
   }
 }
 
-export default Admin
+export default Datas

@@ -5,11 +5,14 @@ import {Col, Container, Row} from "react-bootstrap";
 import classNames from "classnames/bind"
 import styles from "../../styles/index.module.scss"
 import {useRouter} from "next/router";
+import { useCookies } from "react-cookie"
 
 const cs = classNames.bind(styles)
 
 function MydModalWithGrid(props: any) {
+  const [cookies, setCookie] = useCookies(['isAdmin']);
   const router = useRouter()
+
   const [ID, setId] = useState<string>('')
   const [Password, setPassword] = useState<string>('')
 
@@ -22,16 +25,14 @@ function MydModalWithGrid(props: any) {
       })
     }).then((res) => res.json())
     if(res.success) {
-      window.localStorage.setItem('idAdmin', 'true')
-      //router.push('/Desktop/Admin')
+      setCookie('isAdmin', true, { path: '/' })
+      router.push('/Desktop/Datas')
     } else {
       alert("Wrong ID or Password")
       setId("")
       setPassword("")
     }
   }
-
-  console.log(window.localStorage.getItem('idAdmin'))
 
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
@@ -57,16 +58,25 @@ function MydModalWithGrid(props: any) {
 
 const DesktopLogin = () => {
   const [modalShow, setModalShow] = useState<boolean>(false);
+  const [cookies, setCookie] = useCookies(['isAdmin']);
+  const router = useRouter()
+  
+  const isAlreadyLoggedin = () => {
+    if (cookies.isAdmin) {
+      router.push('/Desktop/Datas')
+    } else {
+      setModalShow(true)
+    }
+  }
 
   return (
     <>
-      <Button onClick={() => setModalShow(true)} className={cs('adminBtn', 'button')}>
+      <Button onClick={isAlreadyLoggedin} className={cs('adminBtn', 'button')}>
         관리자로 시작
       </Button>
-
       <MydModalWithGrid show={modalShow} onHide={() => setModalShow(false)}/>
     </>
-  );
+  )
 }
 
 export default DesktopLogin
