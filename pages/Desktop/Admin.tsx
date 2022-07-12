@@ -110,8 +110,7 @@ const Admin = () => {
 
           <div className="footer">
             <a href={'https://github.com/jinhyo-dev/Capstone-Project'} target={"blank"} className='footerFont'>© 2022
-              GBSW
-              Team. Raise</a>
+              GBSW Team. Raise</a>
           </div>
         </>
       )
