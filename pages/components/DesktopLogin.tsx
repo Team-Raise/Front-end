@@ -10,7 +10,6 @@ const cs = classNames.bind(styles)
 
 function MydModalWithGrid(props: any) {
   const router = useRouter()
-
   const [ID, setId] = useState<string>('')
   const [Password, setPassword] = useState<string>('')
 
@@ -23,14 +22,16 @@ function MydModalWithGrid(props: any) {
       })
     }).then((res) => res.json())
     if(res.success) {
-      router.push('/Desktop/Admin')
+      window.localStorage.setItem('idAdmin', 'true')
+      //router.push('/Desktop/Admin')
     } else {
-      alert("Wrong Password")
+      alert("Wrong ID or Password")
       setId("")
       setPassword("")
     }
-
   }
+
+  console.log(window.localStorage.getItem('idAdmin'))
 
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter">
@@ -41,8 +42,8 @@ function MydModalWithGrid(props: any) {
       </Modal.Header>
       <Modal.Body className="show-grid">
         <Container>
-          <input onChange={(e:any) => setId(e.target.value)} className='inputId' placeholder={'ID'}/> <br/>
-          <input type={"password"} onChange={(e:any) => setPassword(e.target.value)} className='inputPassword' placeholder={'Password'}/>
+          <input onChange={(e:any) => setId(e.target.value)} className='inputId' placeholder={'ID'} value={ID}/> <br/>
+          <input type={"password"} onChange={(e:any) => setPassword(e.target.value)} className='inputPassword' placeholder={'Password'} value={Password}/>
           <button onClick={login} className="loginBtn">로그인</button>
 
         </Container>

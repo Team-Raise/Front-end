@@ -16,7 +16,7 @@ const cs = classNames.bind(styles)
 
 const Admin = () => {
   const router = useRouter()
-
+  console.log(window.localStorage.getItem('isAdmin'))
   const {data, error} = useSWR('/api/DB', fetcher)
 
   const truncate = async () => {
