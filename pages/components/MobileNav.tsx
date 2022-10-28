@@ -14,7 +14,7 @@ export default function mobileNav() {
               <a className="nav-link" aria-current="page" href={'/Mobile/Datas'}>메인 페이지</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/Mobile/GrowPlant">식물 도감</a>
+              <a className="nav-link" href={"/Mobile/GrowPlant"}>식물 도감</a>
             </li>
           </ul>
           <form className="d-flex" role="search">

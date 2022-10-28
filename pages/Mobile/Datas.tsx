@@ -25,17 +25,15 @@ const Admin = () => {
   const { data, error } = useSWR('/api/DB', fetcher)
 
   if (cookies.isAdmin) {
-    useEffect (() => {
-      toast.success('관리자님, 환영합니다!', {
-        position: "top-right",
-        autoClose: 500,
-        hideProgressBar: true,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        progress: undefined,
-      })
-    }, [])
+    toast.success('관리자님, 환영합니다!', {
+      position: "top-right",
+      autoClose: 500,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+    })
   }
 
   const truncate = async () => {

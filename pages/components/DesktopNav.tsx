@@ -15,7 +15,7 @@ const DesktopNav = () => {
               <a className="nav-link" aria-current="page" href={'/Desktop/Datas'}>메인 페이지</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/Desktop/GrowPlant">식물 도감</a>
+              <a className="nav-link" href={"/Desktop/GrowPlant"}>식물 도감</a>
             </li>
           </ul>
           <form className="d-flex" role="search">
